@@ -1,19 +1,27 @@
 #include <iostream>
 using namespace std;
-int fib(int n){
-    
+void fib(int n){
+    int a1 = 0; int a2 = 1;
+    if (n == 0){
+        cout << "Error" << endl;
+    }
     if (n == 1){
-        return 0;
+        cout << a1 << endl;
     }
-    if (n == 2){
-        return 1;
+    if (n >= 2){
+        cout << a1 << endl << a2 << endl;
     }
-    return fib(n-1) + fib(n-2);
+    for (int i = 2; i < n; i++){
+        int a = a1 + a2;
+        cout << a << endl;
+        a1 = a2;
+        a2 = a;
+    }
 }
 
 int main(){
     int n; cout << "Insert your n = "; cin >> n;
-    cout << fib(n) << endl;
+    fib(n);
     cout << "Hello World";
     return 0;
 }
